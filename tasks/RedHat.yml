@@ -64,4 +64,4 @@
     state: "installed"
   with_items:
     - java-1.8.0-openjdk
-    - "elasticsearch-{{ elasticsearch_version }}"
+    - "elasticsearch"
