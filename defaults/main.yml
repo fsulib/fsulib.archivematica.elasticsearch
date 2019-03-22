@@ -11,6 +11,7 @@ elasticsearch_apt_dependencies:
   - htop
   - ntp
   - unzip
+  - python-httplib2
 elasticsearch_max_open_files: 65535
 elasticsearch_home_dir: /usr/share/elasticsearch
 elasticsearch_plugin_dir: /usr/share/elasticsearch/plugins
