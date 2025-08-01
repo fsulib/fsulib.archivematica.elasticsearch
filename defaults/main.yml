@@ -17,6 +17,15 @@ elasticsearch_apt_java_package: openjdk-8-jre-headless # Ubuntu
 elasticsearch_yum_java_package: java-1.8.0-openjdk     # RedHat/CentOS/Rocky
 elasticsearch_java_home: "/usr/lib/jvm/java-1.8.0-openjdk-amd64"
 
+elasticsearch_package_extra_version: >-
+ {{
+   (
+     "-amd64" if ansible_os_family == 'Debian' and elasticsearch_version is version_compare('7.0', '>=') else
+     "-x86_64" if ansible_os_family == 'RedHat' and elasticsearch_version is version_compare('7.0', '>=') else
+     ""
+   ) | trim
+ }}
+
 elasticsearch_apt_dependencies:
   - htop
   - ntp

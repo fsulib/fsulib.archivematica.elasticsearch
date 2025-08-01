@@ -77,7 +77,7 @@
 
 # Download deb if needed (ES version >= 5.0.0)
 - name: Download Elasticsearch deb (ES version >= 5.0.0)
-  get_url: url={{ elasticsearch_download_url }}/elasticsearch-{{ elasticsearch_version }}.deb dest=/tmp/elasticsearch-{{ elasticsearch_version }}.deb mode=0440
+  get_url: url={{ elasticsearch_download_url }}/elasticsearch-{{ elasticsearch_version }}{{ elasticsearch_package_extra_version }}.deb dest=/tmp/elasticsearch-{{ elasticsearch_version }}.deb mode=0440
   when: version_exists.stdout == 'no' and elasticsearch_version is version_compare('5.0', '>=')
 
 # Uninstall previous version if applicable
